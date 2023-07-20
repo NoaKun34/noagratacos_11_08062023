@@ -5,7 +5,6 @@ import Collapse from './../../components/Collaps'
 import bannerPath from '../../assets/aboutBanner.png'
 import Banner from '../../components/Banner'
 import Data from '../../data/about.json'
-import {useEffect, useState} from 'react';
 
 //<Collapse contentType="text" collapseWidth="100%" content="test"/>
 
@@ -17,7 +16,7 @@ function About() {
                 <Banner path={bannerPath} />
                 <div className="mainContent">
                     {Data.map(item => (
-                        <Collapse contentType="text" collapseWidth="100%" buttonTitle={item.title} content={item.content} />
+                        <Collapse key={item.id} buttonID={"button-"+item.id} contentID={"content-"+item.id} contentType="text" collapseWidth="100%" buttonTitle={item.title} content={item.content} textAlign="left"/>
                     ))}
                 </div>
             </div>

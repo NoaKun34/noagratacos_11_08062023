@@ -17,19 +17,16 @@ function Text(props) {
     }
 
     if (props.type === "link") {
-        console.log("je suis un lien");
         return (
             <Link to={props.link} className="link" style={textStyle}>{props.content}</Link>
         );
     }
     if (props.type === "text") {
-        console.log("je suis un text simple");
         return (
             <p className="text" style={textStyle}>{props.content}</p>
         );
     }
     if (props.type === "title") {
-        console.log("je suis un titre");
         if (props.titleType === "h1") {
             return (
                 <h1 className="h1" style={textStyle}>{props.content}</h1>
