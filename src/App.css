@@ -36,3 +36,128 @@
     transform: rotate(360deg);
   }
 }
+/*
+body {
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+*/
+
+body {
+  height: 100%;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 40px 100px 0;
+}
+
+.navMenu {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #FF6060;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: right;
+}
+/*
+.banner {
+  background-image: url(components/Banner/background.png);
+  height: 223px;
+  width: 1240px;
+  background-position: center;
+  display: block;
+  margin: 3% auto;
+  border-radius: 25px;
+  z-index: 1;
+}*/
+
+.bannerTitle {
+  color: white;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  text-align: center;
+  align-items: center;
+  padding-top: 6%;
+  z-index: 5;
+}
+
+.bannerOverlay {
+  height: 223px;
+  width: 1240px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.3);;
+}
+
+.dataContainer {
+  display: block;
+  margin: 0 auto;
+  width: 1240px;
+  background-color: #F7F7F7;
+  border-radius: 25px;
+  margin-bottom: 50px;
+  padding: 50px 0px;
+  padding-bottom: 0px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 50px;
+  padding-bottom: 0px;
+}
+
+.cardOverlay {
+  height: 340px;
+  width: 340px;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.cardTitle {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: white;
+  height: 50px;
+  width: 265px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.logementLink {
+  margin: 0 0 50px;
+}
+
+.mainContent {
+  margin: 40px 100px 0px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapseContainer {
+  margin: 0 100px;
+  margin-bottom: 25px;
+}
