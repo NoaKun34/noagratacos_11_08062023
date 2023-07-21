@@ -2,7 +2,7 @@ import "../../App.css";
 import Text from './../Text';
 import downArrow from '../../downArrow.png';
 import upArrow from '../../upArrow.png';
-import {useState} from 'react';
+import { useState } from 'react';
 
 // <Text type="text" content={props.content} weight={props.weight} size={props.size} align={props.align} textAlign={props.textAlign} decoration={props.decoration} color="#FF6060" margin="0" padding="27px 15px"/>
 
@@ -11,8 +11,8 @@ function Collapse(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleCollapse = () => {
-    setIsOpen(!isOpen);
-  };
+        setIsOpen(!isOpen);
+    };
 
     const collapseButtonStyle = {
         backgroundColor: "#FF6060",
@@ -37,7 +37,7 @@ function Collapse(props) {
 
     const collapseImgStyleDown = {
         margin: "auto 18px auto 0",
-        display: isOpen? 'none' : 'block',
+        display: isOpen ? 'none' : 'block',
     }
 
     const collapseImgStyleUp = {
@@ -50,26 +50,54 @@ function Collapse(props) {
         borderRadius: "5px",
         margin: "0",
         display: isOpen ? 'block' : 'none',
+        width: props.collapseWidth,
     }
 
-    const testContent = "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
+    const collapsContainerStyle = {
+        margin: props.containerMargin,
+        marginBottom: "25px",
+    }
+
+    const listStyle = {
+        listStyleType: "none",
+        textAlign: "left",
+        padding: "27px 15px",
+        margin: "0",
+        fontSize: props.fontSize,
+        color: "#FF6060",
+    }
 
     if (props.contentType === "text") {
         return (
-            <div className="collapseContainer">
+            <div className="collapseContainer" style={collapsContainerStyle} >
                 <button id={props.buttonID} type="button" className="collapseButton" style={collapseButtonStyle} onClick={toggleCollapse}>
                     <h2 className="collapseTitle" style={collapseTextStyle}>{props.buttonTitle}</h2>
                     <img src={downArrow} alt="downArrow" style={collapseImgStyleDown} />
                     <img src={upArrow} alt="upArrow" style={collapseImgStyleUp} />
                 </button>
                 <div id={props.contentID} className="collapseContent" style={collapseContentStyle}>
-                    <Text type="text" content={testContent} weight="400" size="24px" align={props.align} textAlign={props.textAlign} decoration={props.decoration} color="#FF6060" margin="0" padding="27px 15px"/>
+                    <Text type="text" content={props.content} weight="400" size={props.fontSize} align={props.align} textAlign={props.textAlign} decoration={props.decoration} color="#FF6060" margin="0" padding="27px 15px" />
                 </div>
             </div>
         )
     }
     if (props.contentType === "list") {
-        
+        return (
+            <div className="collapseContainer" style={collapsContainerStyle} >
+                <button id={props.buttonID} type="button" className="collapseButton" style={collapseButtonStyle} onClick={toggleCollapse}>
+                    <h2 className="collapseTitle" style={collapseTextStyle}>{props.buttonTitle}</h2>
+                    <img src={downArrow} alt="downArrow" style={collapseImgStyleDown} />
+                    <img src={upArrow} alt="upArrow" style={collapseImgStyleUp} />
+                </button>
+                <div id={props.contentID} className="collapseContent" style={collapseContentStyle}>
+                    <ul style={listStyle}>
+                        {props.content.map((item, index) => (
+                            <li key={index} >{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        )
     }
 }
 

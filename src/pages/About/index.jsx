@@ -16,7 +16,7 @@ function About() {
                 <Banner path={bannerPath} />
                 <div className="mainContent">
                     {Data.map(item => (
-                        <Collapse key={item.id} buttonID={"button-"+item.id} contentID={"content-"+item.id} contentType="text" collapseWidth="100%" buttonTitle={item.title} content={item.content} textAlign="left"/>
+                        <Collapse key={item.id} buttonID={"button-"+item.id} contentID={"content-"+item.id} contentType="text" collapseWidth="100%" buttonTitle={item.title} content={item.content} textAlign="left" fontSize="24px" containerMargin="0 100px" />
                     ))}
                 </div>
             </div>

@@ -1,5 +1,4 @@
 import "../../App.css";
-import cardBackground from './cardBackground'
 
 function Card(props) {
 

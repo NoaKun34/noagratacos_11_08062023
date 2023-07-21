@@ -14,6 +14,11 @@ function Text(props) {
         textDecoration: props.decoration,
         margin: props.margin,
         padding: props.padding,
+        backgroundColor: props.backgroundColor,
+        borderRadius: props.borderRadius,
+        width: props.width,
+        height: props.height,
+        display: props.display,
     }
 
     if (props.type === "link") {
